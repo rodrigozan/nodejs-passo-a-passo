@@ -2,13 +2,18 @@ const db = require('../models/users')
 const Users = db.Mongoose.model('users', db.UserSchema, 'users')
 
 module.exports.get = (async (req, res) => {
-    await Users.find({}).lean().exec()
-    .then(data => {
-        res.status(200).json({data})
-        console.log(data)
+    await Users.find({}).lean().exec()  
+    .then(data => { 
+        res.render('index', { 
+            title: 'CRUD Nodejs Express MongoDB EJS',
+            subtitle: 'Usuários Cadastrados',
+            users: data,
+            index: 1
+        })
+        console.log("Dados recuperados com sucesso")
     })
     .catch(error => {
-        console.error(error)
+        console.error("Não foi possível regatar os dados")
     })
     res.end()
 })
@@ -17,7 +22,12 @@ module.exports.getOne = (async (req, res) => {
     let id = req.params.id
     await Users.findOne({_id: id}).lean().exec()
     .then(data => {
-        res.status(200).json({data})
+        res.render('users', { 
+            title: 'CRUD Nodejs Express MongoDB EJS',
+            subtitle: 'Cadastro de novo usuário',
+            user: data,
+            index: 1
+        })
         console.log(data)
     })
     .catch(error => {
@@ -35,12 +45,12 @@ module.exports.post = (async (req, res) => {
     })
     await user.save()
     .then(data => {  
-        res.status(201).json({message: `Usuário cadastrado com sucesso`})
         console.log(data)
     })
     .catch(error => {
         console.error(error) 
     })
+    res.redirect('/')
     res.end()
 })
 
@@ -59,15 +69,16 @@ module.exports.update = (async (req, res) => {
             idade: req.body.idade
         }
     }
-    await Users.findByIdAndUpdate(filter, update) 
+    console.log(update)
+    /*await Users.findByIdAndUpdate(filter, update) 
     .then(data => {  
-        res.status(201).json({message: `Usuário atualizado com sucesso:${data}`})
-        console.log(data)
+        console.log("Usuário atualizado com sucesso")
     })
     .catch(error => {
-        console.error(error)  
+        console.error("Eh, deu ruim, atualizou não")  
     })
-    res.end()
+    res.redirect('/')
+    res.end()*/
 })
 
 module.exports.delete = (async (req, res) => {

@@ -8,7 +8,8 @@
     "db_dir": "mkdir database && cd database && echo > db.js",
     "app_dir": "mkdir app && cd app && mkdir models && mkdir controllers && mkdir routes && mkdir views && cd models && echo > users.js && cd .. && cd controllers && echo > users.js && cd .. &&  cd routes && echo > users.js && cd .. && cd views && echo > users.js && cd .. & cd ..",
     "install": "echo > index.js && npm i --save express mongoose",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "sass_bootstrap": "sass node_modules/bootstrap/scss/bootstrap.scss:public/css/bootstrap.css"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   },
   "homepage": "https://github.com/rodrigozan/nodejs-passo-a-passo#readme",
   "dependencies": {
+    "bootstrap": "^5.1.1",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mongoose": "^6.0.7"

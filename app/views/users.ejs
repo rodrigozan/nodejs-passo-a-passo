@@ -1,0 +1,36 @@
+<%-include('inc/header.ejs')%>
+            <form id="form" method="POST" action="/update/<%=user._id%>">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="name" value="<%=user.name%>">
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" value="<%=user.username%>">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" value="<%=user.email%>">
+                  </div>
+                  <div class="mb-3">
+                    <label for="idade" class="form-label">Idade</label>
+                    <input type="number" class="form-control" id="idade" value="<%=user.idade%>">
+                  </div>
+                <button id="btn_form" type="submit" class="btn btn-primary" va>Salvar</button>
+              </form>
+        </div>
+      </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" 
+        crossorigin="anonymous">
+    </script>
+    <script>
+      /*const btn_form = document.getElementById("btn_form")
+      btn_form.addEventListener("click", (e) => {
+        e.preventDefault()
+        let form = document.getElementById("form")
+        console.log(form.name.value)
+      })*/
+    </script>
+</body>
+</html>
