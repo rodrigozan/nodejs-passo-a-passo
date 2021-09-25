@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-passo-a-passo",
+  "version": "1.0.0",
+  "description": "Um repositório com o passo a passo para aprender Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigozan/nodejs-passo-a-passo.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "express",
+    "api",
+    "restfull",
+    "api",
+    "api",
+    "gateway",
+    "ejs"
+  ],
+  "author": "Rodrigo Zandonadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigozan/nodejs-passo-a-passo/issues"
+  },
+  "homepage": "https://github.com/rodrigozan/nodejs-passo-a-passo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
