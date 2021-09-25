@@ -4,7 +4,11 @@
   "description": "Um repositório com o passo a passo para aprender Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db_dir": "mkdir database && cd database && echo > db.js",
+    "app_dir": "mkdir app && cd app && mkdir models && mkdir controllers && mkdir routes && mkdir views && cd models && echo > users.js && cd .. && cd controllers && echo > users.js && cd .. &&  cd routes && echo > users.js && cd .. && cd views && echo > users.js && cd .. & cd ..",
+    "install": "echo > index.js && npm i --save express mongoose",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -13,12 +17,11 @@
   "keywords": [
     "nodejs",
     "mongodb",
+    "mongoose",
     "express",
     "api",
-    "restfull",
-    "api",
-    "api",
-    "gateway",
+    "api restfull",
+    "api gateway",
     "ejs"
   ],
   "author": "Rodrigo Zandonadi",
@@ -28,6 +31,8 @@
   },
   "homepage": "https://github.com/rodrigozan/nodejs-passo-a-passo#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.7"
   }
 }

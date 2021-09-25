@@ -1,13 +1,18 @@
-//chama o módulo express e o adiciona na constante express
 const express = require('express')
+const path = require('path')
 
-//declara as constantes app e port, adicionando os valores correspondentes a cada uma
-const app = express() // adiciona uma instância do Express à constante app
-const port = 3000 //porta em que o servidor será inicializado
+const app = express()
 
-//cria o servidor web
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
+const index = require('./app/routes/users')
 
-app.listen(port, () => console.log(`Aí sim! Servidor à todo vapor na porta ${port}!`))
+app.set('views', path.join(__dirname, 'app/views'))
+app.set('view engine', 'ejs')
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.use(index)
+
+const port = process.env.PORT || 3000
+
+app.listen(port, () => console.log(`Ok, app running in port ${port} 🔥`))
